@@ -3,31 +3,25 @@ package ru.vlasov.englishstudy.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "tests")
 public class Test {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
-    @Column(name = "date", nullable = false)
+    @Column(name = "date")
     private Date date;
-    @Column(name = "questins_total", nullable = false)
-    private int questionsTotal;
-    @Column(name = "right_answer")
-    private int rightAnswer;
-
+    @Column(name = "question_total")
+    private int questionTotal;
+    @Column(name = "right_answers")
+    private int rightAnswers;
     @ManyToOne
-    @JoinColumn(name = "topic_verb", nullable = false)
-    private TopicVerb topicVerb;
-    @ManyToOne
-    @JoinColumn(name = "user", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
-
-
+    @ManyToOne
+    @JoinColumn(name = "topic_verb_id")
+    private TopicVerb topicVerb;
 }

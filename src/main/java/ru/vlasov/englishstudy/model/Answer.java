@@ -8,7 +8,8 @@ public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "verb", nullable = false)
-    private String verb;
+    @Column(name = "text")
+    private String text;
+    @OneToOne(mappedBy = "answer")
+    private TestQuestion testQuestion;
 }
