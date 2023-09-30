@@ -11,6 +11,6 @@ public class WrongAnswer {
     @Column(name = "text")
     private String text;
     @ManyToOne
-    @JoinColumn(name = "test_id")
+    @JoinColumn(name = "test_questions_id")
     private Test test;
 }

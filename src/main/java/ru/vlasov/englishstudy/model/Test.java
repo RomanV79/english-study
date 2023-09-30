@@ -22,6 +22,6 @@ public class Test {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "topic_verb_id")
+    @JoinColumn(name = "topic_verbs_id")
     private TopicVerb topicVerb;
 }
